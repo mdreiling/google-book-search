@@ -3,29 +3,13 @@ import React, { Component } from 'react';
 import Nav from "../components/Nav";
 import Header from "../components/Header";
 import SearchBar from "../components/SearchBar";
-import ExAPI from "../utils/externalAPI";
 import InAPI from "../utils/internalAPI";
 import BookList from "../components/BookList";
 import BookListEntry from "../components/BookListEntry";
 
 class Search extends Component {
     state = {
-        books: [],
-        bookSearch: ""
-    };
-
-    handleInputChange = event => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
-    };
-
-    handleFormSubmit = event => {
-        event.preventDefault();
-        ExAPI.getBooks(this.state.bookSearch)
-            .then(res => this.setState({ books: res.data }))
-            .catch(err => console.log(err));
+        books: []
     };
 
     // handleSaveClick = ()
