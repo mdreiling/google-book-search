@@ -35,7 +35,6 @@ class Search extends Component {
     render() {
         return (
         <div>
-            <Nav />
             <Header />
             <div>
                 <SearchBar 
